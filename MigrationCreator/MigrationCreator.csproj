@@ -49,6 +49,7 @@
       <DependentUpon>FileNameDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ProjectHelper.cs" />
+    <Compile Include="Helpers\VsTheme.cs" />
     <Compile Include="NewItemTarget.cs" />
     <Compile Include="Options\General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,11 +5,8 @@ global using Task = System.Threading.Tasks.Task;
 using EnvDTE;
 using EnvDTE80;
 using Microsoft;
-using Microsoft.Build.Framework;
-using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Threading;
 using MigrationCreator.Options;
-using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
@@ -28,14 +25,13 @@ namespace MigrationCreator
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.MigrationCreatorString)]
-    [ProvideOptionPage(typeof(Options.OptionsProvider.GeneralOptions), "MigrationCreator", "General", 0, 0, true, SupportsProfiles = true)]
+    [ProvideOptionPage(typeof(OptionsProvider.GeneralOptions), "MigrationCreator", "General", 0, 0, true, SupportsProfiles = true)]
     public sealed class MigrationCreatorPackage : ToolkitPackage
     {
         private static string _folder; //Папка, где хранится шаблон файла
         private const string fileNameTemplate = "V{0}{1}.cs"; //Шаблон имени файла
         private const string _defaultExt = ".txt"; //Расширение шаблона
         private static string _template = " "; //путь к шаблону
-        private const string _templateDir = "Templates";
 
         public static DTE2 _dte;
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
@@ -195,8 +191,6 @@ namespace MigrationCreator
             var name = Path.GetFileName(file);
             var safeName = name.StartsWith(".") ? name : Path.GetFileNameWithoutExtension(file);
             var relative = PackageUtilities.MakeRelative(project.GetRootFolder(), Path.GetDirectoryName(file) ?? "");
-
-
 
             AddTemplatesFromCurrentFolder(_template, Path.GetDirectoryName(file));
 

@@ -8,20 +8,20 @@
 
   <Commands package="MigrationCreator">
     <Groups>
-      <Group guid="MigrationCreator" id="MyMenuGroup" priority="0x0600">
-				<Parent guid="VSMainMenu" id="FolderNode"/>
+      <Group guid="MigrationCreator" id="MigrationCreatorGroup" priority="0x0600">
+			<Parent guid="VSMainMenu" id="FolderNode"/>
       </Group>
     </Groups>
 
     <!--This section defines the elements the user can interact with, like a menu command or a button
         or combo box in a toolbar. -->
     <Buttons>
-      <Button guid="MigrationCreator" id="MyCommand" priority="0x0100" type="Button">
-        <Parent guid="MigrationCreator" id="MyMenuGroup" />
+      <Button guid="MigrationCreator" id="MigrationCreatorCommand" priority="0x0100" type="Button">
+        <Parent guid="MigrationCreator" id="MigrationCreatorGroup" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Create Migration</ButtonText>
-          <LocCanonicalName>.MigrationCreator.MyCommand</LocCanonicalName>
+          <LocCanonicalName>.MigrationCreator.MigrationCreatorCommand</LocCanonicalName>
         </Strings>
       </Button>
     </Buttons>
@@ -29,8 +29,8 @@
 
   <Symbols>
     <GuidSymbol name="MigrationCreator" value="{6dfe9ebb-6670-4aac-a6a6-bd2796415e8e}">
-      <IDSymbol name="MyMenuGroup" value="0x0001" />
-      <IDSymbol name="MyCommand" value="0x0100" />
+      <IDSymbol name="MigrationCreatorGroup" value="0x0001" />
+      <IDSymbol name="MigrationCreatorCommand" value="0x0100" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>

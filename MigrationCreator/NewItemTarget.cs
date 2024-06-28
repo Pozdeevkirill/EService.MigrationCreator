@@ -1,11 +1,8 @@
 ﻿using EnvDTE;
 using EnvDTE80;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Project = EnvDTE.Project;
 using Solution = EnvDTE.Solution;
 

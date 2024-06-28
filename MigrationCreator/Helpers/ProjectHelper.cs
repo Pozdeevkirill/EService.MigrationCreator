@@ -1,17 +1,12 @@
 ﻿using EnvDTE;
 using EnvDTE80;
-
 using Microsoft;
-using Microsoft.Build.Framework;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Editor;
-using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
-using MigrationCreator;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
